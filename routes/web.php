@@ -21,7 +21,6 @@ Route::get('/', function () {
 
 Route::resource('blog', 'BlogController');
 
-Route::get('contact', 'ContactController@index');
 Route::get('about', 'AboutController@index');
 
 Route::get('admin', 'AdminController@index')->middleware('auth');

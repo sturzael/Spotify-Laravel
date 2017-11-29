@@ -1,4 +1,4 @@
-<div class="head">
+{{-- <div class="head">
   <div class="headContainer">
     <h1 class="homeh1">Laravel | @yield('title')</h1>
     <div class="links">
@@ -34,6 +34,32 @@
 
     </div>
     @yield('links')
+  </div>
+
+</div> --}}
+<div class="top-banner">
+  <div class="inner-container-top-banner">
+    <div class="wrapper-banner">
+      <ul class="left">
+
+      </ul>
+      <ul class="right">
+        <li><a class="account-link" tabindex="2" href="/en-us/home/my-account"><i class="fa fa-user a-icon"></i><span class="a-text">Login </span></a></li>
+      </ul>
+    </div>
+
+  </div>
+</div>
+<div class="main-nav">
+  <div class="inner-container-nav">
+    <div class="wrapper-banner">
+      <div class="nav-logo left">
+
+      </div>
+      <div class="nav right">
+
+      </div>
+    </div>
   </div>
 
 </div>
