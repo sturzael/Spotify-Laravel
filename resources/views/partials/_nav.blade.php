@@ -50,15 +50,15 @@
 
   </div>
 </div>
-<div class="main-nav">
+<div class="main-nav" id="pagetop">
   <div class="inner-container-nav">
     <div class="wrapper-banner">
-      <div class="nav-logo left">
+      <div class="nav-logo left main-absolute">
 
       </div>
-      <div class="nav right">
-
-      </div>
+      <ul class="right main-absolute">
+        <li class="center-align"><a class="account-link"  tabindex="2" href="/en-us/home/my-account"><span id="menu-item" class="a-text">Premium </span></a></li>
+      </ul>
     </div>
   </div>
 

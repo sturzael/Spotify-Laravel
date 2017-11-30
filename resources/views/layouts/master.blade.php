@@ -3,8 +3,9 @@
   <head>
     <meta charset="utf-8">
     <link rel="stylesheet" href="{{asset('css/font-awesome.min.css')}}">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css?family=Muli:300,400,600,700,900" rel="stylesheet">
-      {{-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> --}}
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
       <link rel="stylesheet" href="{{asset('css/style.css')}}">
     <title>Laravel Homepage</title>
     <meta name="description" content="@yield('description')">
@@ -24,12 +25,13 @@
 
 
 @include('partials._footer')
+
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
 
         <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js">
 
         </script>
-
+        <script type="text/javascript" src="{{asset('js/script.js')}}">        </script>
           </body>
         </html>

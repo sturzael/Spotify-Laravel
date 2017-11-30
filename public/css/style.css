@@ -76,7 +76,7 @@ body{
 .top-banner {
   height: 45px;
   background-color: #333;
-  position: fixed;
+  position: relative;
   margin-right: auto;
   margin-left: auto;
   color: #999;
@@ -198,13 +198,15 @@ margin-top: 50px;
 }
 .main-nav{
   width: 100vw;
-height: 200px;
+  height: 115px;
 position: fixed;
+  transition: height 0.3s linear 0s, padding 0.3s linear 0s;
+  z-index: 100;
 }
 .inner-container-nav{
   position: relative;
 padding-left: 150px;
-padding-right: 100px;
+padding-right: 150px;
 height: 100%;
 }
 .nav-logo {
@@ -214,4 +216,64 @@ height: 100%;
     background-position: center;
     background-size: contain;
     background-repeat: no-repeat;
+}
+.main-absolute{
+  position: absolute;
+  height: 100%;
+  padding-left: 0;
+}
+.center-align{
+  position: relative;
+top: 50%;
+transform: translateY(-50%);
+}
+#menu-item{
+  padding-left: 25px;
+  font-family: 'Muli';
+  font-weight: 900;
+  color: #cfcfcf;
+  font-size: 19px;
+  letter-spacing: .5px;
+}
+#menu-item:hover{
+  color: white;
+}
+ul{
+  list-style: none;
+}
+
+
+
+#main-text{
+  padding-top: 100px;
+}
+/*//xmas*/
+.info-container {
+  width: 100vw;
+  display: flex;
+}
+.info {
+  width: 50vw;
+  padding: 3vw;
+}
+.info-box {
+  margin: 70px;
+  display: block;
+}
+.info-header {
+  padding-bottom: 30px;
+  font-family: 'Muli';
+    font-size: 25px;
+
+}
+.info-content {
+  font-family: 'open sans';
+  font-size: 23px;
+  color: black;
+}
+#infoimg {
+      background: linear-gradient( rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(../images/slidegal3.jpg)no-repeat center;
+  background-position: center;
+  background-size: cover;
+  z-index: -1;
 }
