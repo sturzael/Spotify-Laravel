@@ -1,15 +1,15 @@
 @extends('layouts.master')
 @section('title','Login')
 @section('styles')
-  .head{
-    height:40vh !important;
+  #menu-item{
+        color:black;
   }
 @endsection
 
 @section('content')
-<div class="container">
-    <div class="row">
-        <div class="col-md-8 col-md-offset-2">
+<div class="container" style="height:100vh; width:100vw;">
+    <div class="row center-align">
+        <div class="col-md-8 col-md-offset-2" style="margin:0 auto;">
             <div class="panel panel-default">
                 <div class="panel-heading">Login</div>
 

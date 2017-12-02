@@ -10,6 +10,7 @@ function yScroll() {
     pagetop.style.height = "90px";
     pagetop.style.paddingTop = "0px";
     pagetop.style.top = "0";
+    $('#menu-item').style.color = "#cfcfcf !important";
 
   } else if (yPos < 10) {
     pagetop.style.backgroundColor = "transparent";
@@ -17,5 +18,3 @@ function yScroll() {
     pagetop.style.paddingTop = "45px";
   }
 }
-var height = $("#main-text").height() + 200;
-$('#infoimg').css('height', height+'px');
