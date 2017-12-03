@@ -56,7 +56,7 @@ body {
   margin-left: auto;
   color: #999;
   width: 100vw;
-  z-index: 1;
+  z-index: 10000;
 }
 
 .inner-container-top-banner {
@@ -323,6 +323,12 @@ font-size: 35px;
 .deal-button{
   margin: 0 auto;
   margin-top: 25px;
+}
+.admin-div{
+  width: 100vw;
+  height: 500px;
+  background-color: black;
+  text-align: center;
 }
 
 @media (min-width: 769px) {

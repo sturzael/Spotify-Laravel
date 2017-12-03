@@ -1,11 +1,11 @@
 <?php
-
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\BlogPosts;
 use Intervention\Image\ImageManager;
 class BlogController extends Controller
+
 {
 
     public function __construct(){
@@ -19,8 +19,8 @@ class BlogController extends Controller
      */
     public function index()
     {
-        //
-        return view("blog.index");
+        $posts = BlogPosts::paginate(6);
+        return view("home", compact("posts"));
     }
 
     /**
@@ -41,31 +41,34 @@ class BlogController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request){
+
     $this->validate($request, [
-      'post_title' => 'required |min:5|max:255',
-      'post_description' =>'required',
-      'image_name' => 'required'
+      'site_header' => 'required |min:2|max:25'
     ]);
-    $newPost = new BlogPosts();
-    $newPost ->post_title = $request->post_title;
-    $newPost ->post_description = $request->post_description;
-    $filename= uniqid();
-    $newPost->image_name = $filename;
-    $manager = new ImageManager();
-    $uploadedImage = $manager->make($request->image_name);
+      $post = BlogPosts::findOrFail(1);
+      $post ->site_header = $request->site_header;
+      $post ->site_para_one_header = $request->site_para_one_header;
+      $post ->site_para_one_sub_header_1 = $request->site_para_one_sub_header_1;
+      $post ->site_para_one_sub_header_2 = $request->site_para_one_sub_header_2;
+      $post ->site_para_one_sub_header_3 = $request->site_para_one_sub_header_3;
+      $post ->site_para_one_text_1 = $request->site_para_one_text_1;
+      $post ->site_para_one_text_2 = $request->site_para_one_text_2;
+      $post ->site_para_one_text_3 = $request->site_para_one_text_3;
 
-        $uploadedImage->fit(300, 200, function($constraint){
-            $constraint->upsize();
-        });
+      $post ->site_para_two_header = $request->site_para_two_header;
+      $post ->site_para_two_sub_header_1 = $request->site_para_two_sub_header_1;
+      $post ->site_para_two_sub_header_2 = $request->site_para_two_sub_header_2;
+      $post ->site_para_two_sub_header_3 = $request->site_para_two_sub_header_3;
+      $post ->site_para_two_text_1 = $request->site_para_two_text_1;
+      $post ->site_para_two_text_2 = $request->site_para_two_text_2;
+      $post ->site_para_two_text_3 = $request->site_para_two_text_3;
 
-        $uploadedImage->save('images/uploads/'.$filename.'-thumb.jpg', 100);
+      $post ->footer_small_text = $request->footer_small_text;
+      $post ->footer_big_text = $request->footer_big_text;
 
-        $uploadedImage -> resize(500,null, function($constraint){
-          $constraint->aspectRatio();
-        });
-        $uploadedImage->save('images/uploads/'.$filename.'-large.jpg', 100);
-        $newPost->save();
-        return redirect()->('blog.show', $newPost);
+
+        $post->update();
+        return redirect()->route('blog.show', $post);
     }
 
     /**
@@ -77,7 +80,7 @@ class BlogController extends Controller
     public function show($id)
     {
       $post = BlogPosts::where('id', "=", $id)->firstOrFail();
-      return view('blog.show', compact('post'));
+      return view('home', compact('post'));
     }
 
     /**
@@ -88,7 +91,8 @@ class BlogController extends Controller
      */
     public function edit($id)
     {
-        //
+        $post = BlogPosts::where('id', "=", 1)->firstOrFail();
+          return view('blog.edit', compact('post'));
     }
 
     /**
@@ -100,7 +104,34 @@ class BlogController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+      $post = BlogPosts::findOrFail(1);
+      // $this->validate($request, [
+      //   'post_title' => 'required |min:5|max:255',
+      //   'post_description' =>'required'
+      // ]);
+      $post ->site_header = $request->site_header;
+      // $post ->post_description = $request->post_description;
+      // if ($request->image) {
+      //       $filename = $post->image_name;
+      //       unlink('/images/uploads/'.$filename.'-large.jpg');
+      //       unlink('/images/uploads/'.$filename.'-thumb.jpg');
+      //       $manager = new ImageManager();
+      //       $uploadedImage = $manager->make($request->image_name);
+      //
+      //           $uploadedImage->fit(300, 200, function($constraint){
+      //               $constraint->upsize();
+      //           });
+      //
+      //           $uploadedImage->save('images/uploads/'.$filename.'-thumb.jpg', 100);
+      //
+      //           $uploadedImage -> resize(500,null, function($constraint){
+      //           $constraint->aspectRatio();
+      //           });
+      //           $uploadedImage->save('images/uploads/'.$filename.'-large.jpg', 100);
+      //
+      // }
+      $post->update();
+        return redirect()->route('blog.edit', 1);
     }
 
     /**
