@@ -100,4 +100,10 @@
 .main-nav{
   display:none;
 }
+#back{
+  display:inline-block;
+}
+#footer{
+  display:none;
+}
 @endsection

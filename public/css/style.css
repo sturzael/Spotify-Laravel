@@ -47,7 +47,11 @@ a {
 body {
   overflow-x: hidden;
 }
+.login{
+  font-size: 35px;
+    font-family: 'Bolde';
 
+}
 .top-banner {
   height: 45px;
   background-color: #333;
@@ -67,6 +71,7 @@ body {
   min-width: 0;
   max-width: 1280px;
   width: 100%;
+  margin: 0 auto;
   padding-left: 20px;
   padding-right: 20px;
 }
@@ -91,7 +96,9 @@ ul {
 .right {
   right: 0;
 }
-
+#back{
+  display: none;
+}
 .top-banner ul li a {
   font-weight: 700;
   color: #fff;
@@ -117,6 +124,7 @@ ul {
   height: 100%;
   position: relative;
   line-height: 20px;
+      float: left;
   font-size: 12px;
 }
 
@@ -135,8 +143,9 @@ ul {
 
 .a-text {
   padding-left: 25px;
-  font-family: 'Muli';
-  font-weight: 500;
+
+    font-weight: 700;
+    text-transform: capitalize;
 }
 
 .homeImage {

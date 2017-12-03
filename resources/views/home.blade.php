@@ -2,7 +2,7 @@
 @section('title','Home')
 @section('description', 'this is a blog post')
 @section('content')
-  @if ($post->id === 1)
+  {{-- @if ($post->id === 1) --}}
     <div class="homeImage">
   <div class="title-container">
   <h1 class="title">{{$post->site_header}}</h1>
@@ -138,7 +138,7 @@
     </div>
   </div>
 </div> --}}
-@elseif ($post->id === 2)
+{{-- @elseif ($post->id === 2)
   <style type="text/css">
     .homeImage{
       height: 54vh;
@@ -192,7 +192,7 @@ height: 100%;">
       </div>
 </div>
   </div>
-  @endif
+  @endif --}}
 
 
 

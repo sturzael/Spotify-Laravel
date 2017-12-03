@@ -10,7 +10,7 @@ class BlogController extends Controller
 
     public function __construct(){
       $this->middleware('auth', ['only' =>['create', 'store', 'edit', 'update', 'delete']]);
-      $this->middleware('auth', ['except'=> 'index', 'show']);
+      // $this->middleware('auth', ['except'=> 'index', 'show']);
     }
     /**
      * Display a listing of the resource.
@@ -79,6 +79,13 @@ class BlogController extends Controller
      */
     public function show($id)
     {
+      // if(Request::path() === '/blog/1'){
+      //   $id = 1;
+      // } elseif (Request::path() === '/blog/2') {
+      //     $id = 2;
+      // }
+
+
       $post = BlogPosts::where('id', "=", $id)->firstOrFail();
       return view('home', compact('post'));
     }
@@ -91,7 +98,8 @@ class BlogController extends Controller
      */
     public function edit($id)
     {
-        $post = BlogPosts::where('id', "=", 1)->firstOrFail();
+      $id = preg_replace('/[^1-2]/', '',url()->current());
+        $post = BlogPosts::where('id', "=", $id)->firstOrFail();
           return view('blog.edit', compact('post'));
     }
 

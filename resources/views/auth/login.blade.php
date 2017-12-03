@@ -2,7 +2,10 @@
 @section('title','Login')
 @section('styles')
   #menu-item{
-        color:black;
+        display:none;
+  }
+  #footer{
+    display:none;
   }
 @endsection
 
@@ -11,7 +14,7 @@
     <div class="row center-align">
         <div class="col-md-8 col-md-offset-2" style="margin:0 auto;">
             <div class="panel panel-default">
-                <div class="panel-heading">Login</div>
+                <div class="panel-heading login">Login</div>
 
                 <div class="panel-body">
                     <form class="form-horizontal" method="POST" action="{{ route('login') }}">
@@ -61,9 +64,7 @@
                                     Login
                                 </button>
 
-                                <a class="btn btn-link" href="{{ route('password.request') }}">
-                                    Forgot Your Password?
-                                </a>
+
                             </div>
                         </div>
                     </form>

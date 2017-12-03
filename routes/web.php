@@ -15,9 +15,8 @@
 //     return view('welcome');
 // });
 
-Route::get('/', function () {
-    return view('/blog/1');
-});
+Route::get('/', 'HomeController@index')->name('home');
+Route::get('/blog/1', 'HomeController@index')->name('home');
 
 Route::resource('blog', 'BlogController');
 
@@ -25,6 +24,3 @@ Route::get('about', 'AboutController@index');
 
 Route::get('admin', 'AdminController@index')->middleware('auth');
 Auth::routes();
-
-
-Route::get('/blog/1', 'HomeController@index')->name('home');
