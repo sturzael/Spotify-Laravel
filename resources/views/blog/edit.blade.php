@@ -104,6 +104,6 @@
   display:inline-block;
 }
 #footer{
-  display:none;
+  margin-top:100px;
 }
 @endsection

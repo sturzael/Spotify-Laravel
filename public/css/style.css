@@ -339,6 +339,10 @@ font-size: 35px;
   background-color: black;
   text-align: center;
 }
+.whatson{
+  position: absolute;
+right: 0;
+}
 
 @media (min-width: 769px) {
   .inner-container-top-banner {

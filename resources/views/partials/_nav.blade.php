@@ -50,7 +50,7 @@
       </div>
       </a>
       <ul class="right main-absolute">
-        <li class="center-align"><a class="account-link"  tabindex="2" href="/en-us/home/my-account"><span id="menu-item" class="a-text">Premium </span></a></li>
+        <li class="center-align"><a class="account-link"  tabindex="2" href="/blog/2"><span id="menu-item" class="a-text">Premium </span></a></li>
       </ul>
     </div>
   </div>

@@ -2,7 +2,8 @@
 @section('title','Home')
 @section('description', 'this is a blog post')
 @section('content')
-  {{-- @if ($post->id === 1) --}}
+  @if ($post->id === 1)
+
     <div class="homeImage">
   <div class="title-container">
   <h1 class="title">{{$post->site_header}}</h1>
@@ -127,29 +128,26 @@
                 </div>
           </div>
         </diV>
-  {{-- <div class="deal-container">
 
 
-  <div class="container center-align">
-    <div class="row">
-      <div class="col-sm-12 col-md-12">
-        <h1>Get Spotify for 2  months for just $2.45¯</h1>
-      </div>
-    </div>
-  </div>
-</div> --}}
-{{-- @elseif ($post->id === 2)
+ @elseif ($post->id === 2)
   <style type="text/css">
     .homeImage{
       height: 54vh;
 min-height: 475px;
 
     }
+    #infoimg {
+    background-image: url(../images/laptopv2.png);
+  }
   </style>
   <div class="homeImage">
 <div class="title-container">
 <h1 class="title">{{$post->site_header}}</h1>
+
 </div>
+
+  </div>
 <div class="container">
     <div class="row" style="height: 100vh;    min-height: 700px;">
       <div class="col-sm-7 col-md-5 center-align" id="main-text" style="
@@ -191,8 +189,39 @@ height: 100%;">
         </div>
       </div>
 </div>
-  </div>
-  @endif --}}
+<div class="container">
+    <div class="row" style="height: 100vh; ">
+      <div class="col-sm-4">
+        <div class="card center-align">
+          <div class="card-block">
+            <h3 class="card-title">Special title treatment</h3>
+            <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+            <a href="#" class="btn btn-primary">Go somewhere</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-4">
+        <div class="card center-align">
+          <div class="card-block">
+            <h3 class="card-title">Special title treatment</h3>
+            <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+            <a href="#" class="btn btn-primary">Go somewhere</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-4">
+        <div class="card center-align">
+          <div class="card-block">
+            <h3 class="card-title">Special title treatment</h3>
+            <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+            <a href="#" class="btn btn-primary">Go somewhere</a>
+          </div>
+        </div>
+      </div>
+</div>
+</diV>
+</div>
+  @endif
 
 
 
