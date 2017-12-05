@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\BlogPosts;
 use App\Colours;
+use App\Identity;
 use Intervention\Image\ImageManager;
 class BlogController extends Controller
 
@@ -50,7 +51,11 @@ class BlogController extends Controller
     ]);
 
 
-      $post = BlogPosts::findOrFail(2);
+      $id = $request->id;
+      // die($id);
+      $post = BlogPosts::findOrFail($id);
+
+
       $post ->site_header = $request->site_header;
       $post ->site_para_one_header = $request->site_para_one_header;
       $post ->site_para_one_sub_header_1 = $request->site_para_one_sub_header_1;
@@ -92,6 +97,8 @@ class BlogController extends Controller
 
 
       $post = BlogPosts::where('id', "=", $id)->firstOrFail();
+
+
       $colours = Colours::where('id', "=", 1)->firstOrFail();
       return view('home', compact('post', 'colours'));
     }
@@ -104,7 +111,9 @@ class BlogController extends Controller
      */
     public function edit($id)
     {
-      $id = preg_replace('/[^1-2]/', '',url()->current());
+
+
+
         $post = BlogPosts::where('id', "=", $id)->firstOrFail();
           return view('blog.edit', compact('post'));
     }

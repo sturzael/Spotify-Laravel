@@ -40,27 +40,9 @@
 
             {{Form::open(array('url' => 'colours', 'files'=>true))}}
             <div class="form-group">
-                   {{Form::label('header_colour', 'Header Colour')}}
-                   {{Form::color('header_colour', $post->header_colour,array('class' =>'form-control colour'))}}
+                   {{Form::label('title', 'Header Colour')}}
+                   {{Form::color('title', $post->title,array('class' =>'form-control colour'))}}
              </div>
-             <div class="form-group">
-                    {{Form::label('block_colour', 'Block Colour')}}
-                    {{Form::color('block_colour', $post->block_colour,array('class' =>'form-control colour'))}}
-              </div>
-              <div class="form-group">
-                     {{Form::label('deal_colour', 'Deal Block Colour')}}
-                     {{Form::color('deal_colour', $post->deal_colour,array('class' =>'form-control colour'))}}
-               </div>
-            <div class="form-group">
-              {{Form::label('text_colour', 'Text Colour')}}
-              {{Form::color('text_colour', $post->text_colour,array('class' =>'form-control colour'))}}
-            </div>
-
-                <div class="form-group">
-                       {{Form::label('oncolour_text_colour', 'Invert Text Colour')}}
-                       {{Form::color('oncolour_text_colour', $post->oncolour_text_colour,array('class' =>'form-control colour'))}}
-                 </div>
-
 
             {{Form::submit('Update', array('class' => 'btn btn-primary'))}}
             {{Form::close()}}

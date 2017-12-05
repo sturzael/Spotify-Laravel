@@ -10,14 +10,19 @@
       <div class="row" style="padding-top:45px;">
         <nav class="col-sm-3 col-md-2 d-none d-sm-block bg-light sidebar">
           <ul class="nav nav-pills flex-column">
-            <li class="nav-item">
-              <a class="nav-link active" href="/blog/1/edit">Home content <span class="sr-only">(current)</span></a>
-            </li>
+
             <li class="nav-item">
               <a class="nav-link" href="#">Site Identity</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="/blog/2/edit">Premium content</a>
+              <a class="nav-link <?php if($post->id == 1){
+                echo 'active';
+              }?>" href="/blog/1/edit">Home content <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link <?php if($post->id == 2){
+                echo 'active';
+              }?>" href="/blog/2/edit">Premium content</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#">Plans</a>
@@ -117,6 +122,10 @@
             <div class="form-group">
               {{Form::label('footer_big_text', 'Big Footer Text')}}
               {{Form::text('footer_big_text',$post->footer_big_text,array('class' =>'form-control'))}}
+            </div>
+            <div class="form-group">
+              {{Form::label('id', 'Database ID')}}
+              {{Form::text('id',$post->id,array('class' =>'form-control', 'readonly' => 'readonly'))}}
             </div>
 
 
