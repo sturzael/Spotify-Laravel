@@ -2,6 +2,7 @@
 @section('title','Home')
 @section('description', 'this is a blog post')
 @section('content')
+
   @if ($post->id === 1)
 
     <div class="homeImage">
@@ -68,7 +69,7 @@
           <h3 class="sub-header white">
                         {{$post->site_para_two_sub_header_1}}
           </h3>
-          <p class="white">
+          <p class="white invert">
                             {{$post->site_para_two_text_1}}
           </p>
         </div>
@@ -76,7 +77,7 @@
           <h3 class="sub-header white">
                             {{$post->site_para_two_sub_header_2}}
           </h3>
-          <p class="white">
+          <p class="white invert">
                             {{$post->site_para_two_text_2}}
           </p>
         </div>
@@ -84,7 +85,7 @@
           <h3 class="sub-header white">
                           {{$post->site_para_two_sub_header_3}}
           </h3>
-          <p class="white">
+          <p class="white invert">
                           {{$post->site_para_two_text_3}}
           </p>
       </div>
@@ -135,11 +136,18 @@
     .homeImage{
       height: 54vh;
 min-height: 475px;
+background: linear-gradient( rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(../images/slidegal2.jpg)no-repeat center;
+background-position: center;
+background-size: cover;
 
     }
     #infoimg {
     background-image: url(../images/laptopv2.png);
   }
+  #outline{
+    background-image: url(../images/devices.png);
+  }
+
   </style>
   <div class="homeImage">
 <div class="title-container">
@@ -189,38 +197,82 @@ height: 100%;">
         </div>
       </div>
 </div>
-<div class="container">
-    <div class="row" style="height: 100vh; ">
-      <div class="col-sm-4">
-        <div class="card center-align">
-          <div class="card-block">
-            <h3 class="card-title">Special title treatment</h3>
-            <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-            <a href="#" class="btn btn-primary">Go somewhere</a>
-          </div>
-        </div>
-      </div>
-      <div class="col-sm-4">
-        <div class="card center-align">
-          <div class="card-block">
-            <h3 class="card-title">Special title treatment</h3>
-            <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-            <a href="#" class="btn btn-primary">Go somewhere</a>
-          </div>
-        </div>
-      </div>
-      <div class="col-sm-4">
-        <div class="card center-align">
-          <div class="card-block">
-            <h3 class="card-title">Special title treatment</h3>
-            <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-            <a href="#" class="btn btn-primary">Go somewhere</a>
-          </div>
-        </div>
-      </div>
 </div>
-</diV>
-</div>
+<div class="box-container-main">
+  <div class="maintext-img" id="outline">
+
+  </div>
+  <div class="maintext-div">
+    <div class="center-align col-sm-9 col-md-9 itseasy">
+      <h2 class="Header-Home white">
+                {{$post->site_para_two_header}}
+      </h2>
+      <div>
+        <h3 class="sub-header white">
+                      {{$post->site_para_two_sub_header_1}}
+        </h3>
+        <p class="white invert">
+                          {{$post->site_para_two_text_1}}
+        </p>
+      </div>
+      <div >
+        <h3 class="sub-header white">
+                          {{$post->site_para_two_sub_header_2}}
+        </h3>
+        <p class="white invert">
+                          {{$post->site_para_two_text_2}}
+        </p>
+      </div>
+      <div>
+        <h3 class="sub-header white">
+                        {{$post->site_para_two_sub_header_3}}
+        </h3>
+        <p class="white invert">
+                        {{$post->site_para_two_text_3}}
+        </p>
+    </div>
+
+  </div>
+    </div>
+
+
+
+
+        </div>
+
+        <div class="container">
+            <div class="row" style="height: 100vh; ">
+              <div class="col-sm-4">
+                <div class="card center-align">
+                  <div class="card-block">
+                    <h3 class="card-title">Special title treatment</h3>
+                    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-4">
+                <div class="card center-align">
+                  <div class="card-block">
+                    <h3 class="card-title">Special title treatment</h3>
+                    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-4">
+                <div class="card center-align">
+                  <div class="card-block">
+                    <h3 class="card-title">Special title treatment</h3>
+                    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                  </div>
+                </div>
+              </div>
+        </div>
+      </diV>
+
+
   @endif
 
 
@@ -228,13 +280,31 @@ height: 100%;">
 
 <div class="jumbotron">
       <div class="container">
-        <p class="subtitle" stlye="color: white;">  {{$post->footer_small_text}}</p>
-        <h3 class="Deal">  {{$post->footer_big_text}}</h3>
+        <p class="subtitle invert" >  {{$post->footer_small_text}}</p>
+        <h3 class="Deal invert">  {{$post->footer_big_text}}</h3>
         <a href="#"><div class="plans-button deal-button">
         <h1 class="title plans-button-link">Learn more</h1>
         </div></a>
 
       </div>
     </div>
+
+@endsection
+@section('styles')
+  p{
+    color:{{ $colours->text_colour }};
+  }
+  .Header-Home{
+    color:{{$colours->header_colour}};
+  }
+  .box-container-main{
+    background-color:{{$colours->block_colour}}
+  }
+  .jumbotron{
+      background-color:{{$colours->deal_colour}}
+  }
+  .invert{
+    color:{{$colours->oncolour_text_colour}}
+  }
 
 @endsection

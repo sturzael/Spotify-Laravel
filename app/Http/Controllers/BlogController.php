@@ -1,8 +1,10 @@
 <?php
+
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\BlogPosts;
+use App\Colours;
 use Intervention\Image\ImageManager;
 class BlogController extends Controller
 
@@ -20,6 +22,7 @@ class BlogController extends Controller
     public function index()
     {
         $posts = BlogPosts::paginate(6);
+        $colours = Colours::all();
         return view("home", compact("posts"));
     }
 
@@ -45,7 +48,9 @@ class BlogController extends Controller
     $this->validate($request, [
       'site_header' => 'required |min:2|max:25'
     ]);
-      $post = BlogPosts::findOrFail(1);
+
+
+      $post = BlogPosts::findOrFail(2);
       $post ->site_header = $request->site_header;
       $post ->site_para_one_header = $request->site_para_one_header;
       $post ->site_para_one_sub_header_1 = $request->site_para_one_sub_header_1;
@@ -87,7 +92,8 @@ class BlogController extends Controller
 
 
       $post = BlogPosts::where('id', "=", $id)->firstOrFail();
-      return view('home', compact('post'));
+      $colours = Colours::where('id', "=", 1)->firstOrFail();
+      return view('home', compact('post', 'colours'));
     }
 
     /**
@@ -112,7 +118,8 @@ class BlogController extends Controller
      */
     public function update(Request $request, $id)
     {
-      $post = BlogPosts::findOrFail(1);
+          $id = preg_replace('/[^1-2]/', '',url()->current());
+      $post = BlogPosts::findOrFail($id);
       // $this->validate($request, [
       //   'post_title' => 'required |min:5|max:255',
       //   'post_description' =>'required'
@@ -139,7 +146,7 @@ class BlogController extends Controller
       //
       // }
       $post->update();
-        return redirect()->route('blog.edit', 1);
+        return redirect()->route('blog.edit', $id);
     }
 
     /**

@@ -19,6 +19,7 @@ Route::get('/', 'HomeController@index')->name('home');
 // Route::get('/blog/1', 'HomeController@index')->name('home');
 
 Route::resource('blog', 'BlogController');
+Route::resource('colours', 'ColourController');
 
 Route::get('about', 'AboutController@index');
 

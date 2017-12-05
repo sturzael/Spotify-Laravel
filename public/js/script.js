@@ -10,11 +10,13 @@ function yScroll() {
     pagetop.style.height = "90px";
     pagetop.style.paddingTop = "0px";
     pagetop.style.top = "0";
-    $('#menu-item').style.color = "#cfcfcf !important";
+    // $('#menu-item').style.Color = "#cfcfcf !important";
+    pagetop.style.zIndex = "100001";
 
   } else if (yPos < 10) {
     pagetop.style.backgroundColor = "transparent";
     pagetop.style.height = "160px";
     pagetop.style.paddingTop = "45px";
+    pagetop.style.zIndex = "100";
   }
 }

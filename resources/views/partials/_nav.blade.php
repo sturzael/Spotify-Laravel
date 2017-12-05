@@ -1,4 +1,8 @@
-
+<?php
+  $id = preg_replace('/[^1-2]/', '',url()->current());
+  if ($id == false) {
+    $id = 1;
+   }?>
 <div class="top-banner">
   <div class="inner-container-top-banner">
     <div class="wrapper-banner">
@@ -12,7 +16,7 @@
       @else
 
         <li><a class="account-link" id="back" tabindex="2" href="{{ route('home') }}"><span class="a-text">Back</span></a></li>
-          <li><a class="account-link" tabindex="2" href="/blog/1/edit"><span class="a-text">Control Panel </span></a></li>
+          <li><a class="account-link" tabindex="2" href="/blog/<?=$id;?>/edit"><span class="a-text">Control Panel </span></a></li>
           <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true">
                   {{ Auth::user()->name }} <span class="caret"></span>
