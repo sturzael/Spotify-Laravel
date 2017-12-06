@@ -8,6 +8,3 @@ class Identity extends Model
 {
   protected $table = 'identity';
 }
-
-
-/**

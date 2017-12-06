@@ -11,6 +11,3 @@ class BlogPosts extends Model
       'post_title', 'post_description', 'image_name',
   ];
 }
-
-
-/**

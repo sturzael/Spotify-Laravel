@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Colours extends Model
+class Images extends Model
 {
-  protected $table = 'colours';
+  protected $table = 'images';
 }

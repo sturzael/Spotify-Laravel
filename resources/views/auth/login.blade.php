@@ -1,12 +1,12 @@
-@extends('layouts.master')
+@extends('layouts.admin')
 @section('title','Login')
 @section('styles')
-  #menu-item{
+  {{-- #menu-item{
         display:none;
   }
   #footer{
     display:none;
-  }
+  } --}}
 @endsection
 
 @section('content')

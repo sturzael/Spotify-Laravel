@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class Identity extends Migration
+class Images extends Migration
 {
     /**
      * Run the migrations.
@@ -13,16 +13,16 @@ class Identity extends Migration
      */
     public function up()
     {
-      Schema::create('identity', function (Blueprint $table) {
+      Schema::create('images', function (Blueprint $table) {
           $table->increments('id');
           // $table->string('site_logo',100);
 
 
-          $table->char('Title');
-          $table->char('Meta_Desc');
-          // $table->char('Site_Logo');
-          $table->char('page_name');
-          $table->char('favicon');
+          $table->string('home_image');
+          $table->string('page_image');
+            $table->string('block1_image');
+              $table->string('block2_image');
+
           $table->timestamps();
       });
     }

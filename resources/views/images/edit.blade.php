@@ -38,23 +38,12 @@
           <h1>Dashboard</h1>
           <div class="admin-settings container">
 
-            {{Form::open(array('url' => 'identity', 'files'=>true))}}
+            {{Form::open(array('url' => 'images', 'files'=>true))}}
             <div class="form-group">
-              {{Form::label('Title', 'Site Title')}}
-              {{Form::text('Title', $post->Title,array('class' =>'form-control'))}}
+              {{ Form::label('home_image', 'Post Image') }}
+      			{{ Form::file('home_image', array('class' => 'form-control'))}}
              </div>
-             <div class="form-group">
-               {{Form::label('Meta_Desc', 'Meta Description')}}
-               {{Form::text('Meta_Desc', $post->Meta_Desc,array('class' =>'form-control'))}}
-              </div>
-              <div class="form-group">
-                {{Form::label('page_name', 'Page 2 Name')}}
-                {{Form::text('page_name', $post->page_name,array('class' =>'form-control'))}}
-               </div>
-               <div class="form-group">
-                 {{Form::label('favicon', 'Favicon')}}
-                 {{Form::text('favicon', $post->favicon,array('class' =>'form-control'))}}
-                </div>
+
 
             {{Form::submit('Store', array('class' => 'btn btn-primary'))}}
             {{Form::close()}}

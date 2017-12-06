@@ -23,8 +23,12 @@ class BlogController extends Controller
     public function index()
     {
         $posts = BlogPosts::paginate(6);
-        $colours = Colours::all();
-        return view("home", compact("posts"));
+
+          $identity = Identity::where('id', "=", 1)->firstOrFail();
+          $colours = Colours::where('id', "=", 1)->firstOrFail();
+
+          return view('home', compact('post', 'colours', 'identity'));
+
     }
 
     /**
@@ -75,10 +79,11 @@ class BlogController extends Controller
 
       $post ->footer_small_text = $request->footer_small_text;
       $post ->footer_big_text = $request->footer_big_text;
+      
 
 
         $post->update();
-        return redirect()->route('blog.show', $post);
+        return redirect()->route('home', $post);
     }
 
     /**
@@ -97,10 +102,11 @@ class BlogController extends Controller
 
 
       $post = BlogPosts::where('id', "=", $id)->firstOrFail();
-
-
+      $identity = Identity::where('id', "=", 1)->firstOrFail();
       $colours = Colours::where('id', "=", 1)->firstOrFail();
-      return view('home', compact('post', 'colours'));
+
+      return view('home', compact('post', 'colours', 'identity'));
+
     }
 
     /**
@@ -115,7 +121,11 @@ class BlogController extends Controller
 
 
         $post = BlogPosts::where('id', "=", $id)->firstOrFail();
-          return view('blog.edit', compact('post'));
+        $identity = Identity::where('id', "=", 1)->firstOrFail();
+        $colours = Colours::where('id', "=", 1)->firstOrFail();
+
+
+          return view('blog.edit',  compact('post', 'colours', 'identity'));
     }
 
     /**
@@ -135,25 +145,7 @@ class BlogController extends Controller
       // ]);
       $post ->site_header = $request->site_header;
       // $post ->post_description = $request->post_description;
-      // if ($request->image) {
-      //       $filename = $post->image_name;
-      //       unlink('/images/uploads/'.$filename.'-large.jpg');
-      //       unlink('/images/uploads/'.$filename.'-thumb.jpg');
-      //       $manager = new ImageManager();
-      //       $uploadedImage = $manager->make($request->image_name);
-      //
-      //           $uploadedImage->fit(300, 200, function($constraint){
-      //               $constraint->upsize();
-      //           });
-      //
-      //           $uploadedImage->save('images/uploads/'.$filename.'-thumb.jpg', 100);
-      //
-      //           $uploadedImage -> resize(500,null, function($constraint){
-      //           $constraint->aspectRatio();
-      //           });
-      //           $uploadedImage->save('images/uploads/'.$filename.'-large.jpg', 100);
-      //
-      // }
+
       $post->update();
         return redirect()->route('blog.edit', $id);
     }

@@ -6,7 +6,9 @@ use Illuminate\Http\Request;
 use App\BlogPosts;
 use App\Colours;
 use App\Identity;
-class IdentityController extends Controller
+use Intervention\Image\ImageManager;
+use App\Images;
+class ImagesController extends Controller
 {
 
 
@@ -21,7 +23,7 @@ class IdentityController extends Controller
          */
         public function index()
         {
-            $posts = Identity::all();
+            $posts = Images::all();
             return view("home", compact("posts"));
         }
 
@@ -32,7 +34,7 @@ class IdentityController extends Controller
          */
         public function create()
         {
-              return view("identity.create");
+              return view("images.create");
 
         }
 
@@ -47,14 +49,26 @@ class IdentityController extends Controller
 
           // die('dsa');
 
-          $post = Identity::findOrFail(1);
-          $post->Title = $request->Title;
-              $post->Meta_Desc = $request->Meta_Desc;
-              $post->page_name = $request->page_name;
-              $post->favicon = $request->favicon;
+          $post = Images::findOrFail(1);
+          $post->home_image = $request->home_image;
 
-            $post->update();
-            return redirect()->route('home', $post);
+          $filename= uniqid();
+$post->home_image = $filename;
+$manager = new ImageManager();
+$uploadedImage = $manager->make($request->home_image);
+
+$uploadedImage->fit(300, 200, function($constraint){
+    $constraint->upsize();
+});
+
+$uploadedImage->save('images/uploads/'.$filename.'-thumb.jpg', 100);
+
+$uploadedImage -> resize(500,null, function($constraint){
+$constraint->aspectRatio();
+});
+$uploadedImage->save('images/uploads/'.$filename.'-large.jpg', 100);
+      $post->save();
+      return redirect()->route('home', $post);
         }
 
         /**
@@ -72,7 +86,7 @@ class IdentityController extends Controller
           // }
 
 
-          $post = Identity::where('id', "=", 1)->firstOrFail();
+          $post = Images::where('id', "=", 1)->firstOrFail();
           return view('home', compact('post'));
         }
 
@@ -84,11 +98,11 @@ class IdentityController extends Controller
          */
         public function edit($id)
         {
-            $post = Identity::where('id', "=", 1)->firstOrFail();
-            $identity = Identity::where('id', "=", 1)->firstOrFail();
+            $post = Images::where('id', "=", 1)->firstOrFail();
+            $identity = Images::where('id', "=", 1)->firstOrFail();
             $colours = Colours::where('id', "=", 1)->firstOrFail();
 
-              return view('identity.edit',  compact('post', 'colours', 'identity'));
+              return view('images.edit',  compact('post', 'colours', 'identity'));
         }
 
         /**
@@ -101,7 +115,7 @@ class IdentityController extends Controller
         public function update(Request $request, $id)
         {
 
-          $post = Identity::findOrFail(1);
+          $post = Images::findOrFail(1);
           // $this->validate($request, [
           //   'post_title' => 'required |min:5|max:255',
           //   'post_description' =>'required'
@@ -128,7 +142,7 @@ class IdentityController extends Controller
           //
           // }
           $post->update();
-            return redirect()->route('identity.edit', $id);
+            return redirect()->route('images.edit', $id);
         }
 
         /**

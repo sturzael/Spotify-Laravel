@@ -12,7 +12,7 @@
           <ul class="nav nav-pills flex-column">
 
             <li class="nav-item">
-              <a class="nav-link" href="#">Site Identity</a>
+              <a class="nav-link" href="/identity/1/edit">Site Identity</a>
             </li>
             <li class="nav-item">
               <a class="nav-link " href="/blog/1/edit">Home content </a>

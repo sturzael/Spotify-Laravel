@@ -16,7 +16,7 @@
     </style>
   </head>
   <body>
-@include('partials._nav')
+@include('partials._adminnav')
 
 
 

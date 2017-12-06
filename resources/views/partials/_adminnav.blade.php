@@ -1,9 +1,4 @@
-<?php
-  $id = preg_replace('/[^1-2]/', '',url()->current());
-  if ($id == false) {
-    $id = 1;
 
-   }?>
 <div class="top-banner">
   <div class="inner-container-top-banner">
     <div class="wrapper-banner">
@@ -45,19 +40,4 @@
     </div>
 
   </div>
-</div>
-<div class="main-nav" id="pagetop">
-  <div class="inner-container-nav">
-    <div class="wrapper-banner">
-      <a href="{{ route('home') }}">
-      <div class="nav-logo left main-absolute">
-
-      </div>
-      </a>
-      <ul class="right main-absolute">
-        <li class="center-align"><a class="account-link"  tabindex="2" href="/blog/2"><span id="menu-item" class="a-text">{{  $identity->page_name}}</span></a></li>
-      </ul>
-    </div>
-  </div>
-
 </div>
