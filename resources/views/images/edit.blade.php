@@ -12,7 +12,7 @@
           <ul class="nav nav-pills flex-column">
 
             <li class="nav-item">
-              <a class="nav-link active" href="#">Site Identity <span class="sr-only">(current)</span></a>
+              <a class="nav-link " href="/identity/1/edit">Site Identity </a>
             </li>
             <li class="nav-item">
               <a class="nav-link " href="/blog/1/edit">Home content </a>
@@ -27,7 +27,7 @@
               <a class="nav-link " href="/colours/1/edit">Colours</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Images</a>
+              <a class="nav-link active" href="#">Images <span class="sr-only">(current)</span></a>
             </li>
           </ul>
 
@@ -38,10 +38,11 @@
           <h1>Dashboard</h1>
           <div class="admin-settings container">
 
-            {{Form::open(array('url' => 'images', 'files'=>true))}}
+            {{ Form::model($post, array('route' => array('images.update', $post->id), 'method' => 'PUT', 'files' => true) ) }}
+            {{ Form::open(array('route' => array('blog.update', $post->id),'method' => 'PUT', 'files' => true)) }}
             <div class="form-group">
               {{ Form::label('home_image', 'Post Image') }}
-      			{{ Form::file('home_image', array('class' => 'form-control'))}}
+      			     {{ Form::file('home_image', array('class' => 'form-control'))}}
              </div>
 
 

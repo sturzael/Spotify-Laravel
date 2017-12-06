@@ -31,7 +31,7 @@
               <a class="nav-link" href="/colours/1/edit">Colours</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Images</a>
+              <a class="nav-link" href="/images/1/edit">Images</a>
             </li>
           </ul>
 

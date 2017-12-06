@@ -6,8 +6,12 @@ use Illuminate\Http\Request;
 use App\BlogPosts;
 use App\Colours;
 use App\Identity;
+
+
+// import the Intervention Image Manager Class
 use Intervention\Image\ImageManager;
 use App\Images;
+
 class ImagesController extends Controller
 {
 
@@ -50,25 +54,16 @@ class ImagesController extends Controller
           // die('dsa');
 
           $post = Images::findOrFail(1);
-          $post->home_image = $request->home_image;
-
-          $filename= uniqid();
-$post->home_image = $filename;
-$manager = new ImageManager();
-$uploadedImage = $manager->make($request->home_image);
-
-$uploadedImage->fit(300, 200, function($constraint){
-    $constraint->upsize();
-});
-
-$uploadedImage->save('images/uploads/'.$filename.'-thumb.jpg', 100);
-
-$uploadedImage -> resize(500,null, function($constraint){
-$constraint->aspectRatio();
-});
-$uploadedImage->save('images/uploads/'.$filename.'-large.jpg', 100);
-      $post->save();
-      return redirect()->route('home', $post);
+          // $post->home_image = $request->home_image;
+          //
+          // $filename= uniqid();
+          // $post->home_image = $filename;
+          // $manager = new ImageManager();
+          // $uploadedImage = $manager->make($request->home_image);
+          //
+          // $uploadedImage->save('imagesss/uploads/'.$filename.'-large.jpg', 100);
+          // $post->update();
+          // return redirect()->route('home', $post);
         }
 
         /**
@@ -142,7 +137,7 @@ $uploadedImage->save('images/uploads/'.$filename.'-large.jpg', 100);
           //
           // }
           $post->update();
-            return redirect()->route('images.edit', $id);
+          return redirect()->route('images.edit', $id);
         }
 
         /**
