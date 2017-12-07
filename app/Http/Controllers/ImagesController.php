@@ -51,19 +51,19 @@ class ImagesController extends Controller
         public function store(Request $request){
 
 
-          // die('dsa');
+          die('dsa');
 
           $post = Images::findOrFail(1);
-          // $post->home_image = $request->home_image;
-          //
-          // $filename= uniqid();
-          // $post->home_image = $filename;
-          // $manager = new ImageManager();
-          // $uploadedImage = $manager->make($request->home_image);
-          //
-          // $uploadedImage->save('imagesss/uploads/'.$filename.'-large.jpg', 100);
-          // $post->update();
-          // return redirect()->route('home', $post);
+          $post->home_image = $request->home_image;
+
+          $filename= uniqid();
+          $post->home_image = $filename;
+          $manager = new ImageManager();
+          $uploadedImage = $manager->make($request->home_image);
+
+          $uploadedImage->save('images/uploads/'.$filename.'-large.jpg', 100);
+          $post->update();
+          return redirect()->route('home', $post);
         }
 
         /**
@@ -111,33 +111,25 @@ class ImagesController extends Controller
         {
 
           $post = Images::findOrFail(1);
-          // $this->validate($request, [
-          //   'post_title' => 'required |min:5|max:255',
-          //   'post_description' =>'required'
-          // ]);
-          // $post->title = $request->title;
-          // $post ->post_description = $request->post_description;
-          // if ($request->image) {
-          //       $filename = $post->image_name;
-          //       unlink('/images/uploads/'.$filename.'-large.jpg');
-          //       unlink('/images/uploads/'.$filename.'-thumb.jpg');
-          //       $manager = new ImageManager();
-          //       $uploadedImage = $manager->make($request->image_name);
-          //
-          //           $uploadedImage->fit(300, 200, function($constraint){
-          //               $constraint->upsize();
-          //           });
-          //
-          //           $uploadedImage->save('images/uploads/'.$filename.'-thumb.jpg', 100);
-          //
-          //           $uploadedImage -> resize(500,null, function($constraint){
-          //           $constraint->aspectRatio();
-          //           });
-          //           $uploadedImage->save('images/uploads/'.$filename.'-large.jpg', 100);
-          //
+          $filename = preg_replace('/ /', '',$post->home_image);
+              $manager = new ImageManager();
+            $uploadedImage = $manager->make($request->home_image);
+            die($filename);
+          $uploadedImage->save('images/uploads/'.$filename.'.jpg', 100);
+
+
+
+                // $filename = $post->home_image;
+                // unlink('/images/uploads/'.$filename.'.jpg');
+                // $manager = new ImageManager();
+                // $uploadedImage = $manager->make($request->home_image);
+                //
+                //     $uploadedImage->save('images/'.$filename.'.jpg');
+
+
           // }
           $post->update();
-          return redirect()->route('images.edit', $id);
+          return redirect()->route('home');
         }
 
         /**
