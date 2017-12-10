@@ -7,6 +7,7 @@ use App\BlogPosts;
 use App\Colours;
 use App\Identity;
 use App\Images;
+use App\Plans;
 
 class HomeController extends Controller
 {
@@ -31,6 +32,8 @@ class HomeController extends Controller
       $colours = Colours::where('id', "=", 1)->firstOrFail();
       $post = BlogPosts::where('id', "=", 1)->firstOrFail();
         $images= Images::where('id', "=", 1)->firstOrFail();
-      return view('home', compact('post', 'colours', 'identity', 'images'));
+        $plans= Plans::where('id', "=", 1)->firstOrFail();
+
+      return view('home', compact('post', 'colours', 'identity', 'images', 'plans'));
     }
 }

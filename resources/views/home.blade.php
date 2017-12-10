@@ -77,7 +77,7 @@
     </div>
     <div class="maintext-div">
       <div class="center-align col-sm-9 col-md-9 itseasy">
-        <h2 class="Header-Home white">
+        <h2 class="Header-Home invert">
                   {{$post->site_para_two_header}}
         </h2>
         <div>
@@ -118,8 +118,20 @@
                 <div class="col-sm-4">
                   <div class="card center-align">
                     <div class="card-block">
-                      <h3 class="card-title">Special title treatment</h3>
-                      <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                      <h3 class="card-title">{{$plans->plan_name}}</h3>
+                      <p class="card-text">${{$plans->plan_price}} Per Month</p>
+                      <hr>
+                      <ul class="ulspec">
+
+
+                      <li>Shuffle Play</li>
+                      <li class="disabled">Ad free</li>
+                      <li class="disabled">Unlimited skips</li>
+                      <li class="disabled">Listen offline</li>
+                      <li class="disabled">Play any track</li>
+                      <li class="disabled">High quality </li>
+                      </ul>
+                      <hr>
                       <a href="#" class="btn btn-primary">Go somewhere</a>
                     </div>
                   </div>
@@ -127,8 +139,20 @@
                 <div class="col-sm-4">
                   <div class="card center-align">
                     <div class="card-block">
-                      <h3 class="card-title">Special title treatment</h3>
-                      <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                      <h3 class="card-title">{{$plans->plan_name2}}</h3>
+                      <p class="card-text">${{$plans->plan_price2}} Per Month</p>
+                      <hr>
+                      <ul class="ulspec">
+
+
+                      <li>Shuffle Play</li>
+                      <li>Ad free</li>
+                      <li>Unlimited skips</li>
+                      <li class="disabled">Listen offline</li>
+                      <li class="disabled">Play any track</li>
+                      <li class="disabled">High quality </li>
+                      </ul>
+                      <hr>
                       <a href="#" class="btn btn-primary">Go somewhere</a>
                     </div>
                   </div>
@@ -136,8 +160,20 @@
                 <div class="col-sm-4">
                   <div class="card center-align">
                     <div class="card-block">
-                      <h3 class="card-title">Special title treatment</h3>
-                      <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                      <h3 class="card-title">{{$plans->plan_name3}}</h3>
+                      <p class="card-text">${{$plans->plan_price3}} Per Month</p>
+                      <hr>
+                      <ul class="ulspec">
+
+
+                      <li>Shuffle Play</li>
+                      <li>Ad free</li>
+                      <li>Unlimited skips</li>
+                      <li>Listen offline</li>
+                      <li>Play any track</li>
+                      <li>High quality </li>
+                            </ul>
+                      <hr>
                       <a href="#" class="btn btn-primary">Go somewhere</a>
                     </div>
                   </div>
@@ -151,17 +187,18 @@
     .homeImage{
       height: 54vh;
 min-height: 475px;
-background: linear-gradient( rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(../images/slidegal2.jpg)no-repeat center;
+background: linear-gradient( rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(../images/uploads/page.jpg)no-repeat center;
 background-position: center;
 background-size: cover;
 
     }
     #infoimg {
-    background-image: url(../images/laptopv2.png);
+    background-image: url(../images/uploads/{{$images->block3_image}}.jpg);
   }
   #outline{
-    background-image: url(../images/devices.png);
+    background-image: url(../images/uploads/{{$images->block4_image}}.png);
   }
+
 
   </style>
   <div class="homeImage">
@@ -219,7 +256,7 @@ height: 100%;">
   </div>
   <div class="maintext-div">
     <div class="center-align col-sm-9 col-md-9 itseasy">
-      <h2 class="Header-Home white">
+      <h2 class=" Header-Home invert">
                 {{$post->site_para_two_header}}
       </h2>
       <div>
@@ -255,37 +292,75 @@ height: 100%;">
 
         </div>
 
-        <div class="container">
-            <div class="row" style="height: 100vh; ">
-              <div class="col-sm-4">
-                <div class="card center-align">
-                  <div class="card-block">
-                    <h3 class="card-title">Special title treatment</h3>
-                    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
+
+                  <div class="container">
+                      <div class="row" style="height: 100vh; ">
+                        <div class="col-sm-4">
+                          <div class="card center-align">
+                            <div class="card-block">
+                              <h3 class="card-title">{{$plans->plan_name}}</h3>
+                              <p class="card-text">${{$plans->plan_price}} Per Month</p>
+                              <hr>
+                              <ul class="ulspec">
+
+
+                              <li>Shuffle Play</li>
+                              <li class="disabled">Ad free</li>
+                              <li class="disabled">Unlimited skips</li>
+                              <li class="disabled">Listen offline</li>
+                              <li class="disabled">Play any track</li>
+                              <li class="disabled">High quality </li>
+                              </ul>
+                              <hr>
+                              <a href="#" class="btn btn-primary">Go somewhere</a>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-sm-4">
+                          <div class="card center-align">
+                            <div class="card-block">
+                              <h3 class="card-title">{{$plans->plan_name2}}</h3>
+                              <p class="card-text">${{$plans->plan_price2}} Per Month</p>
+                              <hr>
+                              <ul class="ulspec">
+
+
+                              <li>Shuffle Play</li>
+                              <li>Ad free</li>
+                              <li>Unlimited skips</li>
+                              <li class="disabled">Listen offline</li>
+                              <li class="disabled">Play any track</li>
+                              <li class="disabled">High quality </li>
+                              </ul>
+                              <hr>
+                              <a href="#" class="btn btn-primary">Go somewhere</a>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-sm-4">
+                          <div class="card center-align">
+                            <div class="card-block">
+                              <h3 class="card-title">{{$plans->plan_name3}}</h3>
+                              <p class="card-text">${{$plans->plan_price3}} Per Month</p>
+                              <hr>
+                              <ul class="ulspec">
+
+
+                              <li>Shuffle Play</li>
+                              <li>Ad free</li>
+                              <li>Unlimited skips</li>
+                              <li>Listen offline</li>
+                              <li>Play any track</li>
+                              <li>High quality </li>
+                                    </ul>
+                              <hr>
+                              <a href="#" class="btn btn-primary">Go somewhere</a>
+                            </div>
+                          </div>
+                        </div>
                   </div>
-                </div>
-              </div>
-              <div class="col-sm-4">
-                <div class="card center-align">
-                  <div class="card-block">
-                    <h3 class="card-title">Special title treatment</h3>
-                    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
-                  </div>
-                </div>
-              </div>
-              <div class="col-sm-4">
-                <div class="card center-align">
-                  <div class="card-block">
-                    <h3 class="card-title">Special title treatment</h3>
-                    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
-                  </div>
-                </div>
-              </div>
-        </div>
-      </diV>
+                </diV>
+
 
 
   @endif

@@ -1,4 +1,8 @@
 
+
+
+
+
 @extends('layouts.master')
 @section('title','Admin')
 @section('description', 'this is a blog post')
@@ -21,13 +25,13 @@
               <a class="nav-link" href="/blog/2/edit">Premium content</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="/plans/1/edit">Plans</a>
+              <a class="nav-link active" href="#">Plans<span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
               <a class="nav-link " href="/colours/1/edit">Colours</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link active" href="#">Images <span class="sr-only">(current)</span></a>
+              <a class="nav-link" href="/images/1/edit">Images</a>
             </li>
           </ul>
 
@@ -38,41 +42,36 @@
           <h1>Dashboard</h1>
           <div class="admin-settings container">
 
-            {{ Form::model($post, array('route' => array('images.update', $post->id), 'method' => 'PUT', 'files' => true) ) }}
-            {{ Form::open(array('route' => array('blog.update', $post->id),'method' => 'PUT', 'files' => true)) }}
+                        {{Form::open(array('url' => 'plans', 'files'=>true))}}
             <div class="form-group">
-              {{ Form::label('home_image', 'Main Home Image') }}
-      			     {{ Form::file('home_image', array('class' => 'form-control'))}}
-             </div>
-
-             <div class="form-group">
-               {{ Form::label('block1_image', 'Secondary Image') }}
-                 {{ Form::file('block1_image', array('class' => 'form-control'))}}
-              </div>
-              <div class="form-group">
-                {{ Form::label('block2_image', 'Home Block Image') }}
-                  {{ Form::file('block2_image', array('class' => 'form-control'))}}
-               </div>
-               <br>
-               <br>
-               <div class="form-group">
-                 {{ Form::label('page_image', 'Premium Main Image') }}
-                   {{ Form::file('page_image', array('class' => 'form-control'))}}
-                </div>
-
-                <div class="form-group">
-                  {{ Form::label('block3_image', 'Premium Secondary Image') }}
-                    {{ Form::file('block3_image', array('class' => 'form-control'))}}
-                 </div>
-                 <div class="form-group">
-                   {{ Form::label('block4_image', 'Premium Block Image') }}
-                     {{ Form::file('block4_image', array('class' => 'form-control'))}}
-                  </div>
-
-
-
-            {{Form::submit('Store', array('class' => 'btn btn-primary'))}}
+              {{Form::label('plan_name', 'Title')}}
+              {{Form::text('plan_name', $post->plan_name,array('class' =>'form-control'))}}
+            </div>
+            <div class="form-group">
+              {{Form::label('plan_price', 'Price')}}
+              {{Form::text('plan_price', $post->plan_price,array('class' =>'form-control'))}}
+            </div>
+            <br>
+            <div class="form-group">
+              {{Form::label('plan_name2', 'Title')}}
+              {{Form::text('plan_name2', $post->plan_name2,array('class' =>'form-control'))}}
+            </div>
+            <div class="form-group">
+              {{Form::label('plan_price2', 'Price')}}
+              {{Form::text('plan_price2', $post->plan_price2,array('class' =>'form-control'))}}
+            </div>
+            <br>
+            <div class="form-group">
+              {{Form::label('plan_name3', 'Title')}}
+              {{Form::text('plan_name3', $post->plan_name3,array('class' =>'form-control'))}}
+            </div>
+            <div class="form-group">
+              {{Form::label('plan_price3', 'Price')}}
+              {{Form::text('plan_price3', $post->plan_price3,array('class' =>'form-control'))}}
+            </div>
+            {{Form::submit('Update', array('class' => 'btn btn-primary'))}}
             {{Form::close()}}
+
           </div>
 
 

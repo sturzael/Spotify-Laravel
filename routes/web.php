@@ -22,6 +22,7 @@ Route::resource('blog', 'BlogController');
 Route::resource('colours', 'ColourController');
 Route::resource('identity', 'IdentityController');
 Route::resource('images', 'ImagesController');
+Route::resource('plans', 'PlansController');
 
 Route::get('about', 'AboutController@index');
 

@@ -21,7 +21,7 @@
               <a class="nav-link" href="/blog/2/edit">Premium content</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Plans</a>
+              <a class="nav-link" href="/plans/1/edit">Plans</a>
             </li>
             <li class="nav-item">
               <a class="nav-link " href="/colours/1/edit">Colours</a>

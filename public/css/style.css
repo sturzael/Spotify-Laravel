@@ -75,15 +75,23 @@ body {
   padding-left: 20px;
   padding-right: 20px;
 }
-
-
+.ulspec li{
+  font-size: 18px;
+}
+hr{
+  margin-top: 2rem;
+margin-bottom: 2rem;
+}
 
 .top-banner ul {
   position: absolute;
   height: 100%;
   padding-left: 0;
 }
-
+li.disabled {
+    color: #777777;
+    text-decoration: line-through;
+}
 .left {
   left: 0;
 }
@@ -298,11 +306,22 @@ overflow: auto;
 }
 .maintext-div{
   width: 50vw;
+  float: left;
   height: 100%;
 
 }
 .white{
   color: white;
+}
+.btn{
+  padding: 1rem 5rem;
+    font-size: 1.2rem;
+}
+.btn-primary {
+    color: #fff;
+    background-color: #1ed760;
+    border-color: #1ed760;
+    border-radius: 100px;
 }
 a:hover{
   text-decoration: none;

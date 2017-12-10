@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use App\BlogPosts;
 use App\Colours;
 use App\Identity;
+use App\Images;
+use App\Plans;
 use Intervention\Image\ImageManager;
 class BlogController extends Controller
 
@@ -26,8 +28,10 @@ class BlogController extends Controller
 
           $identity = Identity::where('id', "=", 1)->firstOrFail();
           $colours = Colours::where('id', "=", 1)->firstOrFail();
+            $images = Images::where('id', "=", 1)->firstOrFail();
+              $plans = Plans::where('id', "=", 1)->firstOrFail();
 
-          return view('home', compact('post', 'colours', 'identity'));
+          return view('home', compact('post', 'colours', 'identity', 'images', 'plans'));
 
     }
 
@@ -79,7 +83,7 @@ class BlogController extends Controller
 
       $post ->footer_small_text = $request->footer_small_text;
       $post ->footer_big_text = $request->footer_big_text;
-      
+
 
 
         $post->update();
@@ -104,9 +108,10 @@ class BlogController extends Controller
       $post = BlogPosts::where('id', "=", $id)->firstOrFail();
       $identity = Identity::where('id', "=", 1)->firstOrFail();
       $colours = Colours::where('id', "=", 1)->firstOrFail();
+      $images = Images::where('id', "=", 1)->firstOrFail();
+        $plans = Plans::where('id', "=", 1)->firstOrFail();
 
-      return view('home', compact('post', 'colours', 'identity'));
-
+    return view('home', compact('post', 'colours', 'identity', 'images', 'plans'));
     }
 
     /**
