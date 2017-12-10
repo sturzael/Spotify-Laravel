@@ -4,7 +4,22 @@
 @section('content')
 
   @if ($post->id === 1)
+    <style type="text/css">
+      .homeImage{
 
+  background: linear-gradient( rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(../images/uploads/{{$images->home_image}}.jpg)no-repeat center;
+  background-position: center;
+  background-size: cover;
+
+      }
+      #infoimg {
+      background-image: url(../images/uploads/{{$images->block1_image}}.jpg);
+    }
+    #outline{
+      background-image: url(../images/uploads/{{$images->block2_image}}.png);
+    }
+
+    </style>
     <div class="homeImage">
   <div class="title-container">
   <h1 class="title">{{$post->site_header}}</h1>

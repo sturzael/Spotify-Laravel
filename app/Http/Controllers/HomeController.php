@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\BlogPosts;
 use App\Colours;
 use App\Identity;
+use App\Images;
 
 class HomeController extends Controller
 {
@@ -29,6 +30,7 @@ class HomeController extends Controller
       $identity = Identity::where('id', "=", 1)->firstOrFail();
       $colours = Colours::where('id', "=", 1)->firstOrFail();
       $post = BlogPosts::where('id', "=", 1)->firstOrFail();
-      return view('home', compact('post', 'colours', 'identity'));
+        $images= Images::where('id', "=", 1)->firstOrFail();
+      return view('home', compact('post', 'colours', 'identity', 'images'));
     }
 }

@@ -41,9 +41,34 @@
             {{ Form::model($post, array('route' => array('images.update', $post->id), 'method' => 'PUT', 'files' => true) ) }}
             {{ Form::open(array('route' => array('blog.update', $post->id),'method' => 'PUT', 'files' => true)) }}
             <div class="form-group">
-              {{ Form::label('home_image', 'Post Image') }}
+              {{ Form::label('home_image', 'Main Home Image') }}
       			     {{ Form::file('home_image', array('class' => 'form-control'))}}
              </div>
+
+             <div class="form-group">
+               {{ Form::label('block1_image', 'Secondary Image') }}
+                 {{ Form::file('block1_image', array('class' => 'form-control'))}}
+              </div>
+              <div class="form-group">
+                {{ Form::label('block2_image', 'Home Block Image') }}
+                  {{ Form::file('block2_image', array('class' => 'form-control'))}}
+               </div>
+               <br>
+               <br>
+               <div class="form-group">
+                 {{ Form::label('page_image', 'Premium Main Image') }}
+                   {{ Form::file('page_image', array('class' => 'form-control'))}}
+                </div>
+
+                <div class="form-group">
+                  {{ Form::label('block3_image', 'Premium Secondary Image') }}
+                    {{ Form::file('block3_image', array('class' => 'form-control'))}}
+                 </div>
+                 <div class="form-group">
+                   {{ Form::label('block4_image', 'Premium Block Image') }}
+                     {{ Form::file('block4_image', array('class' => 'form-control'))}}
+                  </div>
+
 
 
             {{Form::submit('Store', array('class' => 'btn btn-primary'))}}

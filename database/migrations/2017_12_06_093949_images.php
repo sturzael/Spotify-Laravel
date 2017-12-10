@@ -18,10 +18,12 @@ class Images extends Migration
           // $table->string('site_logo',100);
 
 
-          $table->string('home_image');
-          $table->string('page_image');
-            $table->string('block1_image');
-              $table->string('block2_image');
+          $table->char('home_image');
+          $table->char('page_image');
+            $table->char('block1_image');
+              $table->char('block2_image');
+              $table->char('block3_image');
+                $table->char('block4_image');
 
           $table->timestamps();
       });
