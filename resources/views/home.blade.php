@@ -114,8 +114,8 @@
           </div>
 
           <div class="container">
-              <div class="row" style="height: 100vh; ">
-                <div class="col-sm-4">
+              <div class="row plansrow">
+                <div class="col-sm-4 colcard">
                   <div class="card center-align">
                     <div class="card-block">
                       <h3 class="card-title">{{$plans->plan_name}}</h3>
@@ -136,7 +136,7 @@
                     </div>
                   </div>
                 </div>
-                <div class="col-sm-4">
+                <div class="col-sm-4 colcard">
                   <div class="card center-align">
                     <div class="card-block">
                       <h3 class="card-title">{{$plans->plan_name2}}</h3>
@@ -157,7 +157,7 @@
                     </div>
                   </div>
                 </div>
-                <div class="col-sm-4">
+                <div class="col-sm-4 colcard">
                   <div class="card center-align">
                     <div class="card-block">
                       <h3 class="card-title">{{$plans->plan_name3}}</h3>
@@ -294,8 +294,8 @@ height: 100%;">
 
 
                   <div class="container">
-                      <div class="row" style="height: 100vh; ">
-                        <div class="col-sm-4">
+                      <div class="row plansrow">
+                        <div class="col-sm-4 colcard">
                           <div class="card center-align">
                             <div class="card-block">
                               <h3 class="card-title">{{$plans->plan_name}}</h3>
@@ -316,7 +316,7 @@ height: 100%;">
                             </div>
                           </div>
                         </div>
-                        <div class="col-sm-4">
+                        <div class="col-sm-4 colcard">
                           <div class="card center-align">
                             <div class="card-block">
                               <h3 class="card-title">{{$plans->plan_name2}}</h3>
@@ -337,7 +337,7 @@ height: 100%;">
                             </div>
                           </div>
                         </div>
-                        <div class="col-sm-4">
+                        <div class="col-sm-4 colcard">
                           <div class="card center-align">
                             <div class="card-block">
                               <h3 class="card-title">{{$plans->plan_name3}}</h3>

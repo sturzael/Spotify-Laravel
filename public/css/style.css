@@ -307,16 +307,17 @@ overflow: auto;
 .maintext-div{
   width: 50vw;
   float: left;
-  height: 100%;
+  height: 75vh;
 
 }
 .white{
   color: white;
 }
-.btn{
+
+/*.btn{
   padding: 1rem 5rem;
     font-size: 1.2rem;
-}
+}*/
 .btn-primary {
     color: #fff;
     background-color: #1ed760;
@@ -343,6 +344,10 @@ background-color: #141414;
     margin-bottom: 0px !important;
     text-align: center;
 }
+.plansrow{
+  padding-top: 100px;
+    padding-bottom: 100px;
+}
 .Deal{
   font-family: 'Bolde';
 color: white;
@@ -367,6 +372,12 @@ right: 0;
   .inner-container-top-banner {
     padding-left: 30px;
     padding-right: 30px;
+  }
+}
+@media (max-width: 769px) {
+  .colcard{
+    min-width: 100%;
+    padding: 20px;
   }
 }
 
@@ -419,7 +430,9 @@ right: 0;
 .navbar-fixed-top {
   border: 0;
 }
-
+.admin-settings{
+  padding-bottom: 50px;
+}
 /*
  * Sidebar
  */
@@ -443,7 +456,50 @@ right: 0;
     border-right: 1px solid #eee;
   }
 }
+@media (max-width: 630px) {
+  .itseasy{
+    padding-bottom: 25px;
+padding-top: 65px;
 
+  }
+  .sidebar{
+    display: block !important;
+  }
+  .inner-container-nav{
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  .plans-button {
+    width: 200px;
+    height: 40px;
+    background-color: #24CF5F;
+    border-radius: 100px;
+    margin-top: 50px;
+}
+.title-container{
+  padding-left: 50px;
+}
+.title{
+  font-size: 50px;
+}
+.plans-button-link{
+  font-size: 19px;
+}
+.container{
+  position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    padding-right: 30px;
+    padding-left: 40px;
+    padding-bottom: 50px;
+    padding-top: 50px;
+}
+
+.plansrow{
+  padding-top: 0px;
+    padding-bottom: 0px;
+}
+}
 /* Sidebar navigation */
 .nav-sidebar {
   margin-right: -21px; /* 20px padding + 1px border */
