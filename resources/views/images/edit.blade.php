@@ -37,8 +37,9 @@
         <main role="main" class="col-sm-9 ml-sm-auto col-md-10 pt-3">
           <h1>Dashboard</h1>
           <div class="admin-settings container">
-            <?php if ($errors->isEmpty()):?>
-                          <?php else:?>
+            <?php if ($errors->isEmpty()): ?>
+                          <?php
+else: ?>
 
                             <div class="alert alert-danger">
                                 <ul >
@@ -48,7 +49,8 @@
 
                                 </ul>
                             </div>
-                          <?php endif;?>
+                          <?php
+endif; ?>
             {{ Form::model($post, array('route' => array('images.update', $post->id), 'method' => 'PUT', 'files' => true) ) }}
             {{ Form::open(array('route' => array('blog.update', $post->id),'method' => 'PUT', 'files' => true)) }}
             <div class="form-group">

@@ -31,8 +31,8 @@ class HomeController extends Controller
       $identity = Identity::where('id', "=", 1)->firstOrFail();
       $colours = Colours::where('id', "=", 1)->firstOrFail();
       $post = BlogPosts::where('id', "=", 1)->firstOrFail();
-        $images= Images::where('id', "=", 1)->firstOrFail();
-        $plans= Plans::where('id', "=", 1)->firstOrFail();
+      $images= Images::where('id', "=", 1)->firstOrFail();
+      $plans= Plans::where('id', "=", 1)->firstOrFail();
 
       return view('home', compact('post', 'colours', 'identity', 'images', 'plans'));
     }

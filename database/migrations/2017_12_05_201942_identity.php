@@ -15,12 +15,8 @@ class Identity extends Migration
     {
       Schema::create('identity', function (Blueprint $table) {
           $table->increments('id');
-          // $table->string('site_logo',100);
-
-
           $table->char('Title');
           $table->char('Meta_Desc');
-          // $table->char('Site_Logo');
           $table->char('page_name');
           $table->timestamps();
       });
