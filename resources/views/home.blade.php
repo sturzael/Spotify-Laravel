@@ -22,8 +22,8 @@
     </style>
     <div class="homeImage">
   <div class="title-container">
-  <h1 class="title">{{$post->site_header}}</h1>
-  <a href="#"><div class="plans-button">
+  <h1 class="title">{{$post->header}}</h1>
+  <a href="blog/2"><div class="plans-button">
   <h1 class="title plans-button-link">Learn more</h1>
   </div></a>
   </div>
@@ -35,30 +35,30 @@
   height: 100%;">
             <div class="center-align">
               <h2 class="Header-Home" style="margin-top:20px;">
-                          {{$post->site_para_one_header}}
+                          {{$post->para_one_header}}
               </h2>
               <div class="animated animatedFadeInUp fadeInUp">
                 <h3 class="sub-header">
-                                {{$post->site_para_one_sub_header_1}}
+                                {{$post->para_one_sub_header_1}}
                 </h3>
                 <p>
-                                {{$post->site_para_one_text_1}}
+                                {{$post->para_one_text_1}}
                 </p>
               </div>
               <div class="animated animatedFadeInUp fadeInUp">
                 <h3 class="sub-header">
-                                {{$post->site_para_one_sub_header_2}}
+                                {{$post->para_one_sub_header_2}}
                 </h3>
                 <p>
-                              {{$post->site_para_one_text_2}}
+                              {{$post->para_one_text_2}}
                 </p>
               </div>
               <div class="animated animatedFadeInUp fadeInUp">
                 <h3 class="sub-header">
-                                {{$post->site_para_one_sub_header_3}}
+                                {{$post->para_one_sub_header_3}}
                 </h3>
                 <p>
-                                  {{$post->site_para_one_text_3}}
+                                  {{$post->para_one_text_3}}
                 </p>
               </div>
             </div>
@@ -78,30 +78,30 @@
     <div class="maintext-div">
       <div class="center-align col-sm-9 col-md-9 itseasy">
         <h2 class="Header-Home invert">
-                  {{$post->site_para_two_header}}
+                  {{$post->para_two_header}}
         </h2>
         <div>
           <h3 class="sub-header white">
-                        {{$post->site_para_two_sub_header_1}}
+                        {{$post->para_two_sub_header_1}}
           </h3>
           <p class="white invert">
-                            {{$post->site_para_two_text_1}}
+                            {{$post->para_two_text_1}}
           </p>
         </div>
         <div >
           <h3 class="sub-header white">
-                            {{$post->site_para_two_sub_header_2}}
+                            {{$post->para_two_sub_header_2}}
           </h3>
           <p class="white invert">
-                            {{$post->site_para_two_text_2}}
+                            {{$post->para_two_text_2}}
           </p>
         </div>
         <div>
           <h3 class="sub-header white">
-                          {{$post->site_para_two_sub_header_3}}
+                          {{$post->para_two_sub_header_3}}
           </h3>
           <p class="white invert">
-                          {{$post->site_para_two_text_3}}
+                          {{$post->para_two_text_3}}
           </p>
       </div>
 
@@ -132,7 +132,7 @@
                       <li class="disabled">High quality </li>
                       </ul>
                       <hr>
-                      <a href="#" class="btn btn-primary">Go somewhere</a>
+                      <a href="blog/2" class="btn btn-primary">Learn More</a>
                     </div>
                   </div>
                 </div>
@@ -153,7 +153,7 @@
                       <li class="disabled">High quality </li>
                       </ul>
                       <hr>
-                      <a href="#" class="btn btn-primary">Go somewhere</a>
+                      <a href="blog/2" class="btn btn-primary">Learn More</a>
                     </div>
                   </div>
                 </div>
@@ -174,12 +174,22 @@
                       <li>High quality </li>
                             </ul>
                       <hr>
-                      <a href="#" class="btn btn-primary">Go somewhere</a>
+                      <a href="blog/2" class="btn btn-primary">Learn More</a>
                     </div>
                   </div>
                 </div>
           </div>
         </diV>
+        <div class="jumbotron">
+              <div class="container">
+                <p class="subtitle invert" >  {{$post->footer_small_text}}</p>
+                <h3 class="Deal invert">  {{$post->footer_big_text}}</h3>
+                <a href="blog/2"><div class="plans-button deal-button">
+                <h1 class="title plans-button-link">Learn More</h1>
+                </div></a>
+
+              </div>
+            </div>
 
 
  @elseif ($post->id === 2)
@@ -203,7 +213,7 @@ background-size: cover;
   </style>
   <div class="homeImage">
 <div class="title-container">
-<h1 class="title">{{$post->site_header}}</h1>
+<h1 class="title">{{$post->header}}</h1>
 
 </div>
 
@@ -214,30 +224,30 @@ background-size: cover;
 height: 100%;">
         <div class="center-align">
           <h2 class="Header-Home" style="margin-top:20px;">
-                      {{$post->site_para_one_header}}
+                      {{$post->para_one_header}}
           </h2>
           <div class="animated animatedFadeInUp fadeInUp">
             <h3 class="sub-header">
-                            {{$post->site_para_one_sub_header_1}}
+                            {{$post->para_one_sub_header_1}}
             </h3>
             <p>
-                            {{$post->site_para_one_text_1}}
+                            {{$post->para_one_text_1}}
             </p>
           </div>
           <div class="animated animatedFadeInUp fadeInUp">
             <h3 class="sub-header">
-                            {{$post->site_para_one_sub_header_2}}
+                            {{$post->para_one_sub_header_2}}
             </h3>
             <p>
-                          {{$post->site_para_one_text_2}}
+                          {{$post->para_one_text_2}}
             </p>
           </div>
           <div class="animated animatedFadeInUp fadeInUp">
             <h3 class="sub-header">
-                            {{$post->site_para_one_sub_header_3}}
+                            {{$post->para_one_sub_header_3}}
             </h3>
             <p>
-                              {{$post->site_para_one_text_3}}
+                              {{$post->para_one_text_3}}
             </p>
           </div>
         </div>
@@ -257,30 +267,30 @@ height: 100%;">
   <div class="maintext-div">
     <div class="center-align col-sm-9 col-md-9 itseasy">
       <h2 class=" Header-Home invert">
-                {{$post->site_para_two_header}}
+                {{$post->para_two_header}}
       </h2>
       <div>
         <h3 class="sub-header white">
-                      {{$post->site_para_two_sub_header_1}}
+                      {{$post->para_two_sub_header_1}}
         </h3>
         <p class="white invert">
-                          {{$post->site_para_two_text_1}}
+                          {{$post->para_two_text_1}}
         </p>
       </div>
       <div >
         <h3 class="sub-header white">
-                          {{$post->site_para_two_sub_header_2}}
+                          {{$post->para_two_sub_header_2}}
         </h3>
         <p class="white invert">
-                          {{$post->site_para_two_text_2}}
+                          {{$post->para_two_text_2}}
         </p>
       </div>
       <div>
         <h3 class="sub-header white">
-                        {{$post->site_para_two_sub_header_3}}
+                        {{$post->para_two_sub_header_3}}
         </h3>
         <p class="white invert">
-                        {{$post->site_para_two_text_3}}
+                        {{$post->para_two_text_3}}
         </p>
     </div>
 
@@ -312,7 +322,7 @@ height: 100%;">
                               <li class="disabled">High quality </li>
                               </ul>
                               <hr>
-                              <a href="#" class="btn btn-primary">Go somewhere</a>
+                              <a href="https://accounts.spotify.com/en-US/login" class="btn btn-primary">Get Premium</a>
                             </div>
                           </div>
                         </div>
@@ -333,7 +343,7 @@ height: 100%;">
                               <li class="disabled">High quality </li>
                               </ul>
                               <hr>
-                              <a href="#" class="btn btn-primary">Go somewhere</a>
+                              <a href="https://accounts.spotify.com/en-US/login" class="btn btn-primary">Get Premium</a>
                             </div>
                           </div>
                         </div>
@@ -354,7 +364,7 @@ height: 100%;">
                               <li>High quality </li>
                                     </ul>
                               <hr>
-                              <a href="#" class="btn btn-primary">Go somewhere</a>
+                              <a href="https://accounts.spotify.com/en-US/login" class="btn btn-primary">Get Premium</a>
                             </div>
                           </div>
                         </div>
@@ -362,22 +372,22 @@ height: 100%;">
                 </diV>
 
 
+                <div class="jumbotron">
+                      <div class="container">
+                        <p class="subtitle invert" >  {{$post->footer_small_text}}</p>
+                        <h3 class="Deal invert">  {{$post->footer_big_text}}</h3>
+                        <a href="https://accounts.spotify.com/en-US/login"><div class="plans-button deal-button">
+                        <h1 class="title plans-button-link">Get Premium</h1>
+                        </div></a>
+
+                      </div>
+                    </div>
 
   @endif
 
 
 
 
-<div class="jumbotron">
-      <div class="container">
-        <p class="subtitle invert" >  {{$post->footer_small_text}}</p>
-        <h3 class="Deal invert">  {{$post->footer_big_text}}</h3>
-        <a href="#"><div class="plans-button deal-button">
-        <h1 class="title plans-button-link">Learn more</h1>
-        </div></a>
-
-      </div>
-    </div>
 
 @endsection
 @section('styles')

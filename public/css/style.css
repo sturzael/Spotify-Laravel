@@ -82,6 +82,9 @@ hr{
   margin-top: 2rem;
 margin-bottom: 2rem;
 }
+.colcard{
+  height: 500px;
+}
 
 .top-banner ul {
   position: absolute;
@@ -432,6 +435,7 @@ right: 0;
 }
 .admin-settings{
   padding-bottom: 50px;
+  margin-left: 20px;
 }
 /*
  * Sidebar
@@ -461,6 +465,9 @@ right: 0;
     padding-bottom: 25px;
 padding-top: 65px;
 
+  }
+  .maintext-div{
+    min-height: 735px;
   }
   .sidebar{
     display: block !important;

@@ -37,7 +37,18 @@
         <main role="main" class="col-sm-9 ml-sm-auto col-md-10 pt-3">
           <h1>Dashboard</h1>
           <div class="admin-settings container">
+            <?php if ($errors->isEmpty()):?>
+                          <?php else:?>
 
+                            <div class="alert alert-danger">
+                                <ul >
+                                    @foreach($errors->all() as $error)
+                                        <li style="Display:block;">{{ $error }}</li>
+                                    @endforeach
+
+                                </ul>
+                            </div>
+                          <?php endif;?>
             {{Form::open(array('url' => 'identity', 'files'=>true))}}
             <div class="form-group">
               {{Form::label('Title', 'Site Title')}}
@@ -51,10 +62,7 @@
                 {{Form::label('page_name', 'Page 2 Name')}}
                 {{Form::text('page_name', $post->page_name,array('class' =>'form-control'))}}
                </div>
-               <div class="form-group">
-                 {{Form::label('favicon', 'Favicon')}}
-                 {{Form::text('favicon', $post->favicon,array('class' =>'form-control'))}}
-                </div>
+      
 
             {{Form::submit('Store', array('class' => 'btn btn-primary'))}}
             {{Form::close()}}

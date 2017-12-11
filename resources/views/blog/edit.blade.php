@@ -41,7 +41,9 @@
         <main role="main" class="col-sm-9 ml-sm-auto col-md-10 pt-3">
           <h1>Dashboard</h1>
           <div class="admin-settings container">
-            @if($errors)
+        <?php if ($errors->isEmpty()):?>
+                      <?php else:?>
+
                         <div class="alert alert-danger">
                             <ul >
                                 @foreach($errors->all() as $error)
@@ -50,77 +52,77 @@
 
                             </ul>
                         </div>
-                        @endif
+                      <?php endif;?>
             {{Form::open(array('url' => 'blog', 'files'=>true))}}
             <div class="form-group">
-              {{Form::label('site_header', 'Main Title')}}
-              {{Form::text('site_header', $post->site_header,array('class' =>'form-control'))}}
+              {{Form::label('header', 'Main Header')}}
+              {{Form::text('header', $post->header,array('class' =>'form-control'))}}
             </div>
 
 
             <div class="form-group">
-              {{Form::label('site_para_one_header', 'Block 1 Header')}}
-              {{Form::text('site_para_one_header', $post->site_para_one_header,array('class' =>'form-control'))}}
+              {{Form::label('para_one_header', 'Para One Header')}}
+              {{Form::text('para_one_header', $post->para_one_header,array('class' =>'form-control'))}}
             </div>
             <br>
             <div class="form-group">
-              {{Form::label('site_para_one_sub_header_1', 'Sub Header')}}
-              {{Form::text('site_para_one_sub_header_1',$post->site_para_one_sub_header_1,array('class' =>'form-control'))}}
+              {{Form::label('para_one_sub_header_1', 'Para One Sub Header')}}
+              {{Form::text('para_one_sub_header_1',$post->para_one_sub_header_1,array('class' =>'form-control'))}}
             </div>
             <div class="form-group">
-              {{Form::label('site_para_one_text_1', 'Text')}}
-              {{Form::text('site_para_one_text_1',$post->site_para_one_text_1,array('class' =>'form-control'))}}
-            </div>
-            <br>
-            <div class="form-group">
-              {{Form::label('site_para_one_sub_header_2', 'Sub Header')}}
-              {{Form::text('site_para_one_sub_header_2',$post->site_para_one_sub_header_2,array('class' =>'form-control'))}}
-            </div>
-            <div class="form-group">
-              {{Form::label('site_para_one_text_2', 'Text')}}
-              {{Form::text('site_para_one_text_2',$post->site_para_one_text_2,array('class' =>'form-control'))}}
+              {{Form::label('para_one_text_1', 'Para One Text' )}}
+              {{Form::text('para_one_text_1',$post->para_one_text_1,array('class' =>'form-control'))}}
             </div>
             <br>
             <div class="form-group">
-              {{Form::label('site_para_one_sub_header_3', 'Sub Header')}}
-              {{Form::text('site_para_one_sub_header_3',$post->site_para_one_sub_header_3,array('class' =>'form-control'))}}
+              {{Form::label('para_one_sub_header_2', 'Para One Sub Header 2')}}
+              {{Form::text('para_one_sub_header_2',$post->para_one_sub_header_2,array('class' =>'form-control'))}}
             </div>
             <div class="form-group">
-              {{Form::label('site_para_one_text_3', 'Text')}}
-              {{Form::text('site_para_one_text_3',$post->site_para_one_text_3,array('class' =>'form-control'))}}
+              {{Form::label('para_one_text_2', 'Para One Text 2')}}
+              {{Form::text('para_one_text_2',$post->para_one_text_2,array('class' =>'form-control'))}}
+            </div>
+            <br>
+            <div class="form-group">
+              {{Form::label('para_one_sub_header_3', 'Para One Sub Header 3')}}
+              {{Form::text('para_one_sub_header_3',$post->para_one_sub_header_3,array('class' =>'form-control'))}}
+            </div>
+            <div class="form-group">
+              {{Form::label('para_one_text_3', 'Para One Text 3')}}
+              {{Form::text('para_one_text_3',$post->para_one_text_3,array('class' =>'form-control'))}}
             </div>
 <br>
 
             <div class="form-group">
-              {{Form::label('site_para_two_header', 'Block 2 Header')}}
-              {{Form::text('site_para_two_header',$post->site_para_two_header,array('class' =>'form-control'))}}
+              {{Form::label('para_two_header', 'Para Two Header')}}
+              {{Form::text('para_two_header',$post->para_two_header,array('class' =>'form-control'))}}
             </div>
             <br>
             <div class="form-group">
-              {{Form::label('site_para_two_sub_header_1', 'Sub Header')}}
-              {{Form::text('site_para_two_sub_header_1',$post->site_para_two_sub_header_1,array('class' =>'form-control'))}}
+              {{Form::label('para_two_sub_header_1', 'Para Two Sub Header')}}
+              {{Form::text('para_two_sub_header_1',$post->para_two_sub_header_1,array('class' =>'form-control'))}}
             </div>
             <div class="form-group">
-              {{Form::label('site_para_two_text_1', 'Text')}}
-              {{Form::text('site_para_two_text_1',$post->site_para_two_text_1,array('class' =>'form-control'))}}
-            </div>
-            <br>
-            <div class="form-group">
-              {{Form::label('site_para_two_sub_header_2', 'Sub Header')}}
-              {{Form::text('site_para_two_sub_header_2',$post->site_para_two_sub_header_2,array('class' =>'form-control'))}}
-            </div>
-            <div class="form-group">
-              {{Form::label('site_para_two_text_2', 'Text')}}
-              {{Form::text('site_para_two_text_2',$post->site_para_two_text_2,array('class' =>'form-control'))}}
+              {{Form::label('para_two_text_1', 'Para Two Text')}}
+              {{Form::text('para_two_text_1',$post->para_two_text_1,array('class' =>'form-control'))}}
             </div>
             <br>
             <div class="form-group">
-              {{Form::label('site_para_two_sub_header_3', 'Sub Header')}}
-              {{Form::text('site_para_two_sub_header_3',$post->site_para_two_sub_header_3,array('class' =>'form-control'))}}
+              {{Form::label('para_two_sub_header_2', 'Para Two Sub Header 2')}}
+              {{Form::text('para_two_sub_header_2',$post->para_two_sub_header_2,array('class' =>'form-control'))}}
             </div>
             <div class="form-group">
-              {{Form::label('site_para_two_text_3', 'Text')}}
-              {{Form::text('site_para_two_text_3',$post->site_para_two_text_3,array('class' =>'form-control'))}}
+              {{Form::label('para_two_text_2', 'Para Two Text 2')}}
+              {{Form::text('para_two_text_2',$post->para_two_text_2,array('class' =>'form-control'))}}
+            </div>
+            <br>
+            <div class="form-group">
+              {{Form::label('para_two_sub_header_3', 'Para Two Sub Header 3')}}
+              {{Form::text('para_two_sub_header_3',$post->para_two_sub_header_3,array('class' =>'form-control'))}}
+            </div>
+            <div class="form-group">
+              {{Form::label('para_two_text_3', 'Para Two Text 3')}}
+              {{Form::text('para_two_text_3',$post->para_two_text_3,array('class' =>'form-control'))}}
             </div>
 <br>
             <div class="form-group">

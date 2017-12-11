@@ -45,9 +45,15 @@ class PlansController extends Controller
          */
         public function store(Request $request){
 
+              $this->validate($request, [
+                'plan_name' => 'required |min:4|max:20',
+                    'plan_price' => 'required |max:6',
 
-          // die('dsa');
-
+                  'plan_name2' => 'required |min:4|max:20',
+        'plan_price2' => 'required |max:6',
+                    'plan_name3' => 'required |min:4|max:20',
+                            'plan_price3' => 'required |max:6',
+              ]);
           $post = Plans::findOrFail(1);
           $post->plan_name = $request->plan_name;
               $post->plan_price = $request->plan_price;

@@ -22,7 +22,6 @@ class Identity extends Migration
           $table->char('Meta_Desc');
           // $table->char('Site_Logo');
           $table->char('page_name');
-          $table->char('favicon');
           $table->timestamps();
       });
     }

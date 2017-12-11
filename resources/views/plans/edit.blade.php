@@ -41,32 +41,43 @@
         <main role="main" class="col-sm-9 ml-sm-auto col-md-10 pt-3">
           <h1>Dashboard</h1>
           <div class="admin-settings container">
+            <?php if ($errors->isEmpty()):?>
+                          <?php else:?>
 
+                            <div class="alert alert-danger">
+                                <ul >
+                                    @foreach($errors->all() as $error)
+                                        <li style="Display:block;">{{ $error }}</li>
+                                    @endforeach
+
+                                </ul>
+                            </div>
+                          <?php endif;?>
                         {{Form::open(array('url' => 'plans', 'files'=>true))}}
             <div class="form-group">
-              {{Form::label('plan_name', 'Title')}}
+              {{Form::label('plan_name', 'Plan Name ')}}
               {{Form::text('plan_name', $post->plan_name,array('class' =>'form-control'))}}
             </div>
             <div class="form-group">
-              {{Form::label('plan_price', 'Price')}}
+              {{Form::label('plan_price', 'Plan Price')}}
               {{Form::text('plan_price', $post->plan_price,array('class' =>'form-control'))}}
             </div>
             <br>
             <div class="form-group">
-              {{Form::label('plan_name2', 'Title')}}
+              {{Form::label('plan_name2', 'Plan Name 2')}}
               {{Form::text('plan_name2', $post->plan_name2,array('class' =>'form-control'))}}
             </div>
             <div class="form-group">
-              {{Form::label('plan_price2', 'Price')}}
+              {{Form::label('plan_price2', 'Plan Price 2')}}
               {{Form::text('plan_price2', $post->plan_price2,array('class' =>'form-control'))}}
             </div>
             <br>
             <div class="form-group">
-              {{Form::label('plan_name3', 'Title')}}
+              {{Form::label('plan_name3', 'Plan Name 3')}}
               {{Form::text('plan_name3', $post->plan_name3,array('class' =>'form-control'))}}
             </div>
             <div class="form-group">
-              {{Form::label('plan_price3', 'Price')}}
+              {{Form::label('plan_price3', 'Plan Price 3')}}
               {{Form::text('plan_price3', $post->plan_price3,array('class' =>'form-control'))}}
             </div>
             {{Form::submit('Update', array('class' => 'btn btn-primary'))}}

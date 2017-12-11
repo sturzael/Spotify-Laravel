@@ -44,14 +44,18 @@ class IdentityController extends Controller
          */
         public function store(Request $request){
 
+          $this->validate($request, [
+            'Title' => 'required |min:2|max:25',
+            'Meta_Desc' => 'required|min:2|max:200',
+            'page_name' => 'required |min:2|max:15',
 
-          // die('dsa');
+          ]);
 
           $post = Identity::findOrFail(1);
           $post->Title = $request->Title;
               $post->Meta_Desc = $request->Meta_Desc;
               $post->page_name = $request->page_name;
-              $post->favicon = $request->favicon;
+
 
             $post->update();
             return redirect()->route('home', $post);

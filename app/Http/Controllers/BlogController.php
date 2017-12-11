@@ -55,7 +55,30 @@ class BlogController extends Controller
     public function store(Request $request){
 
     $this->validate($request, [
-      'site_header' => 'required |min:2|max:25'
+      'header' => 'required |min:2|max:25',
+      'para_one_header' => 'required|min:3|max:20',
+
+      'para_one_sub_header_1' => 'required|min:3|max:20',
+        'para_one_text_1' => 'required|min:3',
+      'para_one_sub_header_2' => 'required|min:3|max:20',
+            'para_one_text_2' => 'required|min:3',
+      'para_one_sub_header_3' => 'required|min:3|max:20',
+
+
+      'para_one_text_3' => 'required|min:3',
+      'para_two_header' => 'required|min:3|max:20',
+      'para_two_sub_header_1' => 'required|min:3|max:20',
+            'para_two_text_1' => 'required|min:3',
+      'para_two_sub_header_2' => 'required|min:3|max:20',
+            'para_two_text_2' => 'required|min:3',
+      'para_two_sub_header_3' => 'required|min:3|max:20',
+
+
+
+      'para_two_text_3' => 'required|min:3',
+      'footer_small_text'=> 'required|min:5|max:40',
+            'footer_big_text'=> 'required|min:5|max:40'
+
     ]);
 
 
@@ -64,22 +87,22 @@ class BlogController extends Controller
       $post = BlogPosts::findOrFail($id);
 
 
-      $post ->site_header = $request->site_header;
-      $post ->site_para_one_header = $request->site_para_one_header;
-      $post ->site_para_one_sub_header_1 = $request->site_para_one_sub_header_1;
-      $post ->site_para_one_sub_header_2 = $request->site_para_one_sub_header_2;
-      $post ->site_para_one_sub_header_3 = $request->site_para_one_sub_header_3;
-      $post ->site_para_one_text_1 = $request->site_para_one_text_1;
-      $post ->site_para_one_text_2 = $request->site_para_one_text_2;
-      $post ->site_para_one_text_3 = $request->site_para_one_text_3;
+      $post ->header = $request->header;
+      $post ->para_one_header = $request->para_one_header;
+      $post ->para_one_sub_header_1 = $request->para_one_sub_header_1;
+      $post ->para_one_sub_header_2 = $request->para_one_sub_header_2;
+      $post ->para_one_sub_header_3 = $request->para_one_sub_header_3;
+      $post ->para_one_text_1 = $request->para_one_text_1;
+      $post ->para_one_text_2 = $request->para_one_text_2;
+      $post ->para_one_text_3 = $request->para_one_text_3;
 
-      $post ->site_para_two_header = $request->site_para_two_header;
-      $post ->site_para_two_sub_header_1 = $request->site_para_two_sub_header_1;
-      $post ->site_para_two_sub_header_2 = $request->site_para_two_sub_header_2;
-      $post ->site_para_two_sub_header_3 = $request->site_para_two_sub_header_3;
-      $post ->site_para_two_text_1 = $request->site_para_two_text_1;
-      $post ->site_para_two_text_2 = $request->site_para_two_text_2;
-      $post ->site_para_two_text_3 = $request->site_para_two_text_3;
+      $post ->para_two_header = $request->para_two_header;
+      $post ->para_two_sub_header_1 = $request->para_two_sub_header_1;
+      $post ->para_two_sub_header_2 = $request->para_two_sub_header_2;
+      $post ->para_two_sub_header_3 = $request->para_two_sub_header_3;
+      $post ->para_two_text_1 = $request->para_two_text_1;
+      $post ->para_two_text_2 = $request->para_two_text_2;
+      $post ->para_two_text_3 = $request->para_two_text_3;
 
       $post ->footer_small_text = $request->footer_small_text;
       $post ->footer_big_text = $request->footer_big_text;
@@ -148,7 +171,7 @@ class BlogController extends Controller
       //   'post_title' => 'required |min:5|max:255',
       //   'post_description' =>'required'
       // ]);
-      $post ->site_header = $request->site_header;
+      $post ->header = $request->header;
       // $post ->post_description = $request->post_description;
 
       $post->update();
