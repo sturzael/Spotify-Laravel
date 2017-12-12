@@ -54,7 +54,7 @@ class PlansController extends Controller {
      */
     public function show($id) {
         $post = Plans::where('id', "=", 1)->firstOrFail();
-        return view('home', compact('post'));
+        return view('home');
     }
     /**
      * Show the form for editing the specified resource.

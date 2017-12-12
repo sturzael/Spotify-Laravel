@@ -55,6 +55,7 @@ class ImagesController extends Controller {
      * @return \Illuminate\Http\Response
      */
     public function show($id) {
+      die('dsa');
         $post = Images::where('id', "=", 1)->firstOrFail();
         return view('home', compact('post'));
     }

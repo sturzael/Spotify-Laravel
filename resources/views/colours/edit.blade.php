@@ -41,24 +41,24 @@
             {{Form::open(array('url' => 'colours', 'files'=>true))}}
             <div class="form-group">
                    {{Form::label('header_colour', 'Header Colour')}}
-                   {{Form::color('header_colour', $post->header_colour,array('class' =>'form-control colour'))}}
+                   {{Form::text('header_colour', $post->header_colour,array('class' =>'form-control colour jscolor'))}}
              </div>
              <div class="form-group">
                     {{Form::label('block_colour', 'Block Colour')}}
-                    {{Form::color('block_colour', $post->block_colour,array('class' =>'form-control colour'))}}
+                    {{Form::text('block_colour', $post->block_colour,array('class' =>'form-control colour jscolor'))}}
               </div>
               <div class="form-group">
                      {{Form::label('deal_colour', 'Deal Block Colour')}}
-                     {{Form::color('deal_colour', $post->deal_colour,array('class' =>'form-control colour'))}}
+                     {{Form::text('deal_colour', $post->deal_colour,array('class' =>'form-control colour jscolor'))}}
                </div>
             <div class="form-group">
               {{Form::label('text_colour', 'Text Colour')}}
-              {{Form::color('text_colour', $post->text_colour,array('class' =>'form-control colour'))}}
+              {{Form::text('text_colour', $post->text_colour,array('class' =>'form-control colour jscolor'))}}
             </div>
 
                 <div class="form-group">
                        {{Form::label('oncolour_text_colour', 'Invert Text Colour')}}
-                       {{Form::color('oncolour_text_colour', $post->oncolour_text_colour,array('class' =>'form-control colour'))}}
+                       {{Form::text('oncolour_text_colour', $post->oncolour_text_colour,array('class' =>'form-control colour jscolor'))}}
                  </div>
 
 

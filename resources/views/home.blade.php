@@ -392,19 +392,19 @@ height: 100%;">
 @endsection
 @section('styles')
   p{
-    color:{{ $colours->text_colour }};
+    color:#{{ $colours->text_colour }};
   }
   .Header-Home{
-    color:{{$colours->header_colour}};
+    color:#{{$colours->header_colour}};
   }
   .box-container-main{
-    background-color:{{$colours->block_colour}}
+    background-color:#{{$colours->block_colour}}
   }
   .jumbotron{
-      background-color:{{$colours->deal_colour}}
+      background-color:#{{$colours->deal_colour}}
   }
   .invert{
-    color:{{$colours->oncolour_text_colour}}
+    color:#{{$colours->oncolour_text_colour}}
   }
 
 @endsection
